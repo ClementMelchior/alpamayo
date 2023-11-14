@@ -1,5 +1,7 @@
 package melchior.clement.back.manager;
 
+import org.apache.log4j.Logger;
+
 import melchior.clement.back.entity.event.list.expeditionProposal.ExpeditionProposalEvent;
 import melchior.clement.back.entity.expedition.Expedition;
 import melchior.clement.back.entity.expedition.ExpeditionResume;
@@ -8,6 +10,8 @@ import melchior.clement.back.entity.object.MontainObject;
 import melchior.clement.back.entity.player.Player;
 
 public class ExpeditionManager {
+    private static Logger LOGGER = Logger.getLogger(ExpeditionManager.class);
+
     private static ExpeditionManager instance;
     private Expedition expedition;
     private ExpeditionStateEnum state;
@@ -27,7 +31,7 @@ public class ExpeditionManager {
     }
 
     public void reset () {
-        System.out.println("Resetting expedition");
+        LOGGER.info("Resetting expedition");
         this.expedition = null;
         this.state = ExpeditionStateEnum.LOCK;
         this.daysLock = 3;

@@ -2,10 +2,13 @@ package melchior.clement.back.entity.event;
 
 import java.io.File;
 
+import org.apache.log4j.Logger;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public abstract class Event {
+    private static Logger LOGGER = Logger.getLogger(Event.class);
     private String name;
     private String question;
     private EventCategoryEnum eventCategory;
@@ -14,7 +17,7 @@ public abstract class Event {
     protected int lock;
     
     public Event(String name, EventCategoryEnum eventCategory, EventTypeEnum eventType, String question, String soundName, int lock) {
-        System.out.println("Creating event: " + name);
+        LOGGER.info("Creating event : " + name);
         this.name = name;
         this.eventCategory = eventCategory;
         this.eventType = eventType;

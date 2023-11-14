@@ -2,12 +2,16 @@ package melchior.clement.back.manager;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import melchior.clement.back.entity.object.MontainObject;
 import melchior.clement.back.entity.object.MontainObjectCategoryEnum;
 import melchior.clement.back.entity.object.list.*;
 import melchior.clement.utilities.Mathematiques;
 
 public class ObjectManager {
+    private static Logger LOGGER = Logger.getLogger(ObjectManager.class);
+
     private static ObjectManager instance;
     public ArrayList <MontainObject> foodObjects;
     public ArrayList <MontainObject> heatObjects;
@@ -33,7 +37,7 @@ public class ObjectManager {
     }
 
     public void reset () {
-        System.out.println("Resetting object");
+        LOGGER.info("Resetting object");
         foodObjects();
         heatObjects();
         entertainObjects();

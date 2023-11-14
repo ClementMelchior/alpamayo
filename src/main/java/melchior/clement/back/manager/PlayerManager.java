@@ -2,12 +2,15 @@ package melchior.clement.back.manager;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import melchior.clement.back.entity.object.MontainObject;
 import melchior.clement.back.entity.player.Player;
 import melchior.clement.back.entity.player.PlayerStateEnum;
 import melchior.clement.utilities.Mathematiques;
 
 public class PlayerManager {
+    private static Logger LOGGER = Logger.getLogger(PlayerManager.class);
     private static PlayerManager instance;
     private ArrayList <Player> players;
 
@@ -27,7 +30,7 @@ public class PlayerManager {
     }
 
     public void reset () {
-        System.out.println("Resetting player");
+        LOGGER.info("Resetting player");
         this.players = new ArrayList<Player>();
         this.players.add(new Player(0, "Dominique"));
         this.players.add(new Player(1, "Paul"));

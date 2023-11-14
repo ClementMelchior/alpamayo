@@ -2,6 +2,8 @@ package melchior.clement.back.manager;
 
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import melchior.clement.back.entity.object.MontainObject;
 import melchior.clement.back.entity.object.MontainObjectCategoryEnum;
 import melchior.clement.back.entity.object.list.Carte;
@@ -10,6 +12,8 @@ import melchior.clement.back.entity.object.list.Viande;
 import melchior.clement.utilities.Mathematiques;
 
 public class InventoryManager {
+    private static Logger LOGGER = Logger.getLogger(InventoryManager.class);
+
     private static InventoryManager instance;
     private ArrayList <MontainObject> objects;
 
@@ -25,7 +29,7 @@ public class InventoryManager {
     } 
 
     public void setStartInventory() {
-        System.out.println("Setting inventory");
+        LOGGER.info("Resetting object");
         for (int i = 0; i < 6 + Mathematiques.alea(4); i++) {
             this.objects.add(new Viande());
         }
