@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="backgroundGame" maxHeight="900.0" maxWidth="1440.0" minHeight="900.0" minWidth="1440.0" prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="melchior.clement.GameController">
+   <children>
+      <ImageView fx:id="backgroundPlayer1" fitHeight="900.0" fitWidth="710.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/melchior/clement/picture/player/alive/player1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backgroundPlayer2" fitHeight="900.0" fitWidth="355.0" layoutX="355.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/melchior/clement/picture/player/alive/player2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backgroundPlayer3" fitHeight="900.0" fitWidth="355.0" layoutX="710.0" onMouseClicked="#startDay" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/melchior/clement/picture/player/alive/player3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backgroundPlayer4" fitHeight="900.0" fitWidth="860.0" layoutX="1010.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/melchior/clement/picture/player/alive/player4.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="startDayButton" layoutX="1091.0" layoutY="736.0" mnemonicParsing="false" onAction="#startButton" prefHeight="78.0" prefWidth="296.0" style="-fx-background-color: #D0EBF9; -fx-background-radius: 30;" text="Commencer la journée">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="dayButton" layoutX="332.0" layoutY="228.0" mnemonicParsing="false" onAction="#startDay" style="-fx-background-color: #000000;" text="Jour 1" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Arial" size="200.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
